@@ -4,7 +4,7 @@ $(document).ready(function()
 	{
 
 		$("#avatar").css("background-color",col);
-
+		/*$("#circle").css("background-color",col);*/
 	});
 
 

@@ -58,7 +58,7 @@ def ws_city(message):
 	fina  = check(cgi.escape(message['disp']))
 	room = session.get('room')
 	print room
-	emit('disp', {'nam': session.get('name')+': ','disp' :fina},room = room,namespace='/chat')
+	emit('disp', {'nam': session.get('name')+': ','disp' :fina,'clr':message['clr']},room = room,namespace='/chat')
 @socketio.on("type",namespace='/chat')
 def auto_print(message):
 	room = session.get('room')
