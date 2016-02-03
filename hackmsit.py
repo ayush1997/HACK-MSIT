@@ -5,6 +5,7 @@ import cgi
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
+#dic = {'c':''}
 
 @app.route('/',methods=['GET','POST'])
 def index():
