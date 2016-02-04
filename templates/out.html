@@ -2,153 +2,58 @@
 <head><title>chat-hub</title>
 
  <link href={{url_for('static',filename = 'css/bootstrap.min.css')}} rel="stylesheet">
-
-<style>
-body{
-padding-bottom: 50px;
-
-}
-
-.r{
-    background-color: #1abc9c;
-}
-.navbar-fixed-bottom{
-    padding-top: 7px;
-    height: 30px !important;
-
-   
-}
-.navbar
-{
-    background-color: black;
-}
-.avatar{
-    -webkit-filter: blur(0.250em) 
-}
-
-.slide{
-    height: 100% !important;
-    /*width:100%;
-    height:100%;*/
-    background-color: #34495e;
-}
-.bott{
-    
-}
-
-.mainbox{
-    padding-left: 80px !important;
-}
-.box{
-    padding-top: 10px;
-    height:90%;
-    width:90%;
-    background-color: #34495e;
-    overflow: auto;
-    border
-}
-
-#round{
-
-    position:relative;
-
-    border: 4px solid;
-    padding-left: 80px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-    background-color: #ecf0f1;
-    border-top-right-radius: 4em;
- border-bottom-right-radius: 4em;
- border-top-left-radius: 4em;
- border-bottom-left-radius: 4em;
-}
-#circle {position:absolute;
-left:-5px;
-top:-10px;
-    width: 60px;
-    height: 60px;
-    
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    border-radius:30px;
- border:4px solid;
-}
-#circleblack {position:absolute;
-left:-8px;
-top:-15px;
-    width: 70px;
-    height: 70px;
-    background:  #34495e
-;
-    -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    border-radius:35px;
-        
-}
-#disp{
-    width:100%;
-}
-</style>
+<link href={{url_for('static',filename = 'css/cs.css')}} rel="stylesheet">
 
 
 
-
+<link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:700|Black+Ops+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
    
         <div class="row r">
-            <div class = "col-xs-12 col-lg-12 col-md-12">
-
-                <div id = "avatar" class='avatar' style="height:10px;background-color:#1abc9c"></div>
-                <div id = "avatar" style="height:10px;background-color:"></div>
+           
+            <div class = "col-xs-3 col-lg-3 col-md-3 slide" id="join">
+               
+            </div>
+            <div class = "col-xs-5 col-lg-5 col-md-5" style="padding-left:50px;"> <p style=" margin-left:20px;font-family: 'Bangers';font-size:50px;">Welcome {{name}}</p>
 
             </div>
-            <div class = "col-xs-3 col-lg-3 col-md-3 slide">
-                <p>bhbGVDFDSF has joined..</p></br>
-                <p>fvdfd</p>
-            </div>
-            <div class = "col-xs-5 col-lg-5 col-md-5"> <h1>Welcome <span id="textdisp"></span></h1></div>
-            <div class = "col-xs-4 col-lg-4 col-md-4"> <h1>{{room}}</h1></div>
 
+            <div class = "col-xs-4 col-lg-4 col-md-4"> <p style="margin-top:20px;font-size:30px;">{{room}}</p></div>
+            <div class="col-xs-9 col-lg-9 col-md-9" id="ty">
+                    <p id="aut_type"></p>       
+            </div>
             <div class="col-xs-9 col-lg-9 col-md-9 mainbox">
 
-                
                 <div class="box">
+                <div class="shbox">
                   
-                   
-                   <!--   <div>
-                        <div id="round">
-                            <span> ayush</span>
-                            <div id="circleblack"></div>
-                            <div id="circle"></div>
-                    
-                     
-                        </div>
-                    </div>  
-                </br> -->
+                  
             </div>
-
+</div>
 
              
-
+<!-- <p id="link_opener"></p>
+    <p id="aut_type"></p>
+    <p id='join'></p>
+    <h1>{{room}}</h1> -->
 
  <nav class="navbar navbar-inverse navbar-fixed-bottom bott" >
       <form role="form" class="form-inline" method="post" action="#" id="dispform">
         <div class="col-sm-11 col-xs-11 col-md-11 col-lg-11"> 
-        <input type="text"  class="form-control" id="disp" onkeypress ='typeauto()' onkeyup='type_auto_up()' placeholder="enter text"></input>
+        <input type="text"  class="form-control" id="disp" onkeypress ='typeauto()' onkeyup='type_auto_up()' placeholder="enter text" ></input>
         </div>
         <!-- <input type="submit" value="Submit"></input> -->
         <button type="submit" class="glyphicon glyphicon-send btn btn-default"></button>
     </form>
 </nav>
    
-    <p id="link_opener"></p>
-    <p id="aut_type"></p>
-    <p id='join'></p>
-    <h1>{{room}}</h1>
+    
 
    <!--  <form method="post" action="#" id="dispform">
         <label>TEXT</label>
@@ -172,12 +77,10 @@ top:-15px;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    
     <script src={{url_for('static',filename = 'avatar.js')}}></script>
-      <!-- <script src={{url_for('static',filename = 'text-autotype.js')}}></script> -->
+      <script src={{url_for('static',filename = 'text-autotype.js')}}></script>
    
     <link  href={{url_for('static',filename='font-awesome-4.5.0/css/font-awesome.min.css')}} rel="stylesheet" >
    
-    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:700|Black+Ops+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <script src={{url_for('static',filename = 'js/bootstrap.min.js')}}></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -188,7 +91,8 @@ top:-15px;
             var socket = io.connect(url + "/chat");
 
 
-            var ls=[]
+         
+          
             $("#dispform").submit(function(event) {
               console.log($('#disp').val());
                 socket.emit('disp', {'disp': $("#disp").val(),'clr':col});
@@ -198,7 +102,7 @@ top:-15px;
             
             socket.on('disp', function(msg) {
                    
-                $(".box").prepend('<div><div id="round"><span>'+msg.nam+ msg.disp+'</span><div id="circleblack"></div><div id="circle" style="background-color:'+msg.clr+';"></div></div></div> </br>');
+                $(".box").prepend('<div class="txt"><div id="round"><span>'+msg.nam+ msg.disp+'</span><div id="circleblack"></div><div id="circle" style="background-color:'+msg.clr+';"></div></div></div> </br>');
             });
             
             var timer;
@@ -222,6 +126,7 @@ top:-15px;
             socket.on('atype',function(data){
                 if (data.press=='t'){
                     $('#aut_type').html(data.name);
+                   
                 }
                 else
                     {$('#aut_type').html(' ');}
@@ -239,9 +144,10 @@ top:-15px;
                     {}
                  else
                  {
-                    $('#join').prepend('<p>'+data.msg+'</p>');
+                    $('#join').prepend( '<div class="sl"> '+data.msg+'<div class="circlesl"></div></div>');
                     }
             });
+
      
        
     </script>

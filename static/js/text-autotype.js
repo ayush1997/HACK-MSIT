@@ -1,6 +1,6 @@
 var i = 1; 
 var j= -1;
-var list = [];
+var list = ['wqewwerrew'];
 var a=list[0];
 var len = list.length;
 var num = 0;
@@ -18,7 +18,7 @@ function txt(){
 			}
 		else
 			{	
-				i = -1;}
+				return;}
 	}
 	
 
@@ -28,4 +28,4 @@ function txt(){
 
 
 
-setInterval(txt,190);
+
